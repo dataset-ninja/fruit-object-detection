@@ -34,7 +34,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 9178780
+PREVIEW_IMAGE_ID: int = 9181287
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/fruit-object-detection"
@@ -48,7 +48,19 @@ DOWNLOAD_ORIGINAL_URL: Optional[
 ] = "https://www.kaggle.com/datasets/eunpyohong/fruit-object-detection/download?datasetVersionNumber=3"
 # Optional link for downloading original dataset (e.g. "https://some.com/dataset/download")
 
-CLASS2COLOR: Optional[Dict[str, List[str]]] = None
+CLASS2COLOR: Optional[Dict[str, List[str]]] = {
+    "apple": [230, 25, 75],
+    "tangerine": [60, 180, 75],
+    "pear": [255, 225, 25],
+    "watermelon": [0, 130, 200],
+    "durian": [245, 130, 48],
+    "lemon": [145, 30, 180],
+    "grape": [70, 240, 240],
+    "watermelon": [240, 50, 230],
+    "dragon fruit": [210, 245, 60],
+    "korean melon": [250, 190, 212],
+    "cantaloupe": [0, 128, 128],
+}
 # If specific colors for classes are needed, fill this dict (e.g. {"class1": [255, 0, 0], "class2": [0, 255, 0]})
 
 # If you have more than the one paper, put the most relatable link as the first element of the list

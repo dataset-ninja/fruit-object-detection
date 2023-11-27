@@ -121,15 +121,41 @@ def convert_and_upload_supervisely_project(
                         obj_class = [
                             obj_class
                             for obj_class in obj_classes
-                            if obj_class.name == str(int(curr_data[0]))
+                            if obj_class.name == index_to_class_name[curr_data[0]]
                         ][0]
                         label = sly.Label(rectangle, obj_class)
                         labels.append(label)
 
         return sly.Annotation(img_size=(img_height, img_wight), labels=labels)
 
+    index_to_class_name = {
+        0.0: "apple",
+        1.0: "tangerine",
+        2.0: "pear",
+        3.0: "watermelon",
+        4.0: "durian",
+        5.0: "lemon",
+        6.0: "grape",
+        7.0: "pineapple",
+        8.0: "dragon fruit",
+        9.0: "korean melon",
+        10.0: "cantaloupe",
+    }
+
     # obj_class = sly.ObjClass("fruit", sly.Rectangle)
-    obj_class_names = ["4", "1", "2", "9", "6", "7", "0", "3", "10", "5", "8"]
+    obj_class_names = [
+        "apple",
+        "tangerine",
+        "pear",
+        "watermelon",
+        "durian",
+        "lemon",
+        "grape",
+        "pineapple",
+        "dragon fruit",
+        "korean melon",
+        "cantaloupe",
+    ]
     # [4.0, 1.0, 2.0, 9.0, 6.0, 7.0, 0.0, 3.0, 10.0, 5.0, 8.0] classes index, but no data with class names...
     global obj_classes
     obj_classes = [sly.ObjClass(name, sly.Rectangle) for name in obj_class_names]
